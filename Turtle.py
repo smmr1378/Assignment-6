@@ -1,0 +1,30 @@
+import turtle
+from turtle import *
+shape("turtle")
+color("blue")
+width(2)
+
+
+
+def MakeShape():
+    l = 30
+    h = 15
+
+    for numSides in range(3,10):
+        degree = ((numSides - 2) * 180) / numSides
+        left(180 - (degree / 2))
+
+        for i in range (numSides):
+            forward(l)
+            left(180 - degree)
+
+        right(180 - (degree / 2))
+        penup()
+        forward(h)
+        pendown()
+
+        l += 15
+        h += 2
+
+MakeShape()
+turtle.done()
